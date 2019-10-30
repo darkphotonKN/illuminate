@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql, StaticQuery, Link } from "gatsby"
+import React from 'react';
+import { graphql, StaticQuery, Link } from 'gatsby';
 
-import Layout from "../../components/layout"
+import Layout from '../../components/layout';
 
 const getImageData = graphql`
   {
@@ -17,7 +17,7 @@ const getImageData = graphql`
       }
     }
   }
-`
+`;
 
 export default () => (
   <Layout>
@@ -26,7 +26,7 @@ export default () => (
 
     <StaticQuery
       query={getImageData}
-      render={data => (
+      render={(data) => (
         <table>
           <thead>
             <tr>
@@ -53,4 +53,4 @@ export default () => (
 
     <Link to="/page-2">Go to page 2</Link>
   </Layout>
-)
+);
