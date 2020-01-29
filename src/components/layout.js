@@ -10,7 +10,8 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
-import './layout.css';
+import Nav from './nav';
+// import './layout.css'; // for component-specific css
 
 const getSiteMetaData = graphql`
   query SiteTitleQuery {
@@ -28,22 +29,16 @@ const Layout = ({ children }) => {
   const data = useStaticQuery(getSiteMetaData);
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0
-        }}
-      >
+    <div className="app">
+      <Nav />
+      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+      <section id="main-content">
         <main>{children}</main>
         <footer>
           {data.site.siteMetadata.author} © {data.site.siteMetadata.createDate}
         </footer>
-      </div>
-    </>
+      </section>
+    </div>
   );
 };
 

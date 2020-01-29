@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  // font-size: 100%
+
+html
+  font-size: 62.5% // makes 1rem into 10px
+
+body
+  box-sizing: border-box
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif
+  font-size: 1.4rem
+  font-weight: 300
+  background-color: #1a1a1a
+  color: $color-white // $color-secondary
+  // text-shadow: $color-secondary 0 0 100px
+
+.app
+  overflow: hidden
+  position: relative
+  padding: 10px 30px
+
+  section#main-content
+    // padding: 20px 40px
+    padding-top: 50px
+
+    p
+      font-size: 1.8rem
+
+  h2
+    font-size: 4rem
+    color: $color-secondary
+    // text-shadow: $color-secondary 0 0 2px
+
+  footer
+    margin-top: 160px
+
+a
+  text-decoration: none
+  transition: color 200ms ease-in-out
+  color: $color-primary
+
+  &:hover
+    color: $color-secondary
+    text-shadow: $color-secondary 0 0 100px

@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica,
+    sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.app {
+  overflow: hidden;
+  position: relative;
+  padding: 10px 30px;
+}
+.app section#main-content {
+  padding: 20px 40px;
+}
+.app section#main-content p {
+  font-size: 1.8rem;
+}
+.app h2 {
+  font-size: 4rem;
+  color: #478cb3;
+}
+
+a {
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+  color: #ffd399;
+}
+a:hover {
+  color: #478cb3;
+  text-shadow: #478cb3 0 0 100px;
+}
+
+nav.main-nav nav {
+  text-align: center;
+}
+
+nav.main-nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav.main-nav ul li {
+  list-style: none;
+}
+nav.main-nav ul li a {
+  color: #ffd399;
+  text-shadow: rgba(255, 211, 153, 0.6) 0px 0px 100px;
+  transition: color 200ms ease-in-out;
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+nav.main-nav ul li a:hover {
+  color: #478cb3;
+  text-shadow: #478cb3 0 0 100px;
+}
+
+.home-page p {
+  margin-top: 20px;
+}
