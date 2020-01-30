@@ -7,6 +7,10 @@ const Portfolio = () => {
     <Layout>
       <section id="portfolio">
         <h2 className="section-title">Portfolio</h2>
+        <p>kin blog</p>
+        <p>snnp</p>
+        <p>game of life</p>
+        <p>tcmetro</p>
       </section>
     </Layout>
   );

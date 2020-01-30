@@ -41,9 +41,9 @@ a {
     text-shadow: #478CB3 0 0 100px; }
 
 .pagination {
-  margin-top: 40px;
   display: flex;
   margin: 0 auto;
+  margin-top: 120px;
   justify-content: space-around;
   max-width: 300px; }
 
@@ -76,9 +76,19 @@ button.btn {
   button.btn:hover {
     color: #ffffff;
     background-color: #478CB3; }
+  button.btn.btn-more {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    transition: color 200ms ease-in;
+    border: 1px solid #ffffff; }
+    button.btn.btn-more:hover {
+      color: #ffd399; }
 
-.home-page p {
-  margin-top: 20px; }
+.home-page {
+  display: flex;
+  justify-content: space-between; }
+  .home-page p {
+    margin-top: 20px; }
 
 section#blog .blog-post-block {
   margin: 25px 0; }
