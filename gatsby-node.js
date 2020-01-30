@@ -61,10 +61,10 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // making blog page (list of posts) also a template
+  const postsPerPage = 2;
+  const totalPages = Math.ceil(posts.length / postsPerPage);
 
-  posts.forEach((_, index, postsArr) => {
-    const totalPages = postsArr.length;
-    const postsPerPage = 1;
+  Array.from({ length: totalPages }).forEach((_, index, postsArr) => {
     const currentPage = index + 1;
     const isFirstPage = index === 0;
     const isLastPage = currentPage === totalPages;

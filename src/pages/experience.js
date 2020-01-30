@@ -6,7 +6,7 @@ const Experience = () => {
   return (
     <Layout>
       <section id="experience">
-        <h2>Experience</h2>
+        <h2 className="section-title">Experience</h2>
       </section>
     </Layout>
   );

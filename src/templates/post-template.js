@@ -2,11 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import BackButton from '../components/button/backButton';
 
 // getting data props from graphql query below, renaming to "post"
 const PostTemplate = ({ data: post }) => {
   return (
     <Layout>
+      <BackButton />
       <h2>{post.markdownRemark.frontmatter.title}</h2>
       <div dangerouslySetInnerHTML={{ __html: post.markdownRemark.html }}></div>
     </Layout>

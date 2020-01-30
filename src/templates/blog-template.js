@@ -7,7 +7,6 @@ const getMarkdownPosts = graphql`
   {
     allMarkdownRemark {
       totalCount
-
       edges {
         node {
           id
@@ -26,46 +25,53 @@ const getMarkdownPosts = graphql`
 `;
 
 const Blog = ({ data, pageContext }) => {
-  const { currentPage, isFirstPage, isLastPage } = pageContext;
+  const { currentPage, isFirstPage, isLastPage, totalPages } = pageContext;
   const nextPage = `/blog/${String(currentPage + 1)}`;
   const prevPage =
     currentPage - 1 === 1 ? '/blog' : `/blog/${String(currentPage - 1)}`;
 
   return (
     <Layout>
-      <div>
-        <h2 style={{ display: 'inlineBlock', borderBottom: '1px solid' }}>
-          Blog
-        </h2>
+      <section id="blog">
+        <h2 className="section-title">Blog</h2>
 
-        <h4>Total Blog Posts: {data.allMarkdownRemark.edges.totalCount}</h4>
+        <h4>
+          There are currently {data.allMarkdownRemark.totalCount} total blog
+          posts.
+        </h4>
 
         {data.allMarkdownRemark.edges.map((item) => (
-          <div key={item} style={{ margin: '33px 0' }}>
+          <div key={item} className="blog-post-block">
             <h3>
               {console.log('Item:', item.node.fields.slug)}
               <Link to={`/posts/${item.node.fields.slug}`}>
                 {item.node.frontmatter.title}
               </Link>
-              <span style={{ color: '#bbb' }}>
+              <span style={{ color: '#bbb', marginLeft: '12px' }}>
                 {item.node.frontmatter.date}
               </span>
             </h3>
 
             <div
-              className="main-content"
+              className="blog-content"
               dangerouslySetInnerHTML={{ __html: item.node.excerpt }}
             ></div>
           </div>
         ))}
 
         {/* Pagination */}
-        <div>
+        <div className="pagination">
           {!isFirstPage && (
             <Link to={prevPage} rel="prev">
               Prev Page
             </Link>
           )}
+          {/* Making a length of an array with total length supplied, as well mapping over with a build in map function */}
+          {Array.from({ length: totalPages }, (_, index) => (
+            <Link to={`/blog/${index === 0 ? '' : index + 1}`} key={index}>
+              {index + 1}
+            </Link>
+          ))}
 
           {!isLastPage && (
             <Link to={nextPage} rel="next">
@@ -73,7 +79,7 @@ const Blog = ({ data, pageContext }) => {
             </Link>
           )}
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

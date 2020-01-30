@@ -27,6 +27,8 @@ body {
   .app h2 {
     font-size: 4rem;
     color: #478CB3; }
+    .app h2.section-title {
+      margin-bottom: 25px; }
   .app footer {
     margin-top: 160px; }
 
@@ -37,6 +39,13 @@ a {
   a:hover {
     color: #478CB3;
     text-shadow: #478CB3 0 0 100px; }
+
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  max-width: 300px; }
 
 nav.main-nav nav {
   text-align: center; }
@@ -56,5 +65,25 @@ nav.main-nav ul {
         color: #478CB3;
         text-shadow: #478CB3 0 0 100px; }
 
+button.btn {
+  border: 1px solid #ffd399;
+  background-color: #ffd399;
+  padding: 3px 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  font-size: 1.6rem; }
+  button.btn:hover {
+    color: #ffffff;
+    background-color: #478CB3; }
+
 .home-page p {
   margin-top: 20px; }
+
+section#blog .blog-post-block {
+  margin: 25px 0; }
+  section#blog .blog-post-block h3 {
+    font-weight: 400;
+    font-size: 2rem; }
+  section#blog .blog-post-block .blog-content {
+    font-size: 1.8rem; }

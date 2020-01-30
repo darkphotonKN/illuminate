@@ -33,7 +33,9 @@ body
   h2
     font-size: 4rem
     color: $color-secondary
-    // text-shadow: $color-secondary 0 0 2px
+    &.section-title
+      margin-bottom: 25px
+      // text-shadow: $color-secondary 0 0 2px
 
   footer
     margin-top: 160px
@@ -46,3 +48,10 @@ a
   &:hover
     color: $color-secondary
     text-shadow: $color-secondary 0 0 100px
+
+.pagination
+  margin-top: 40px
+  display: flex
+  margin: 0 auto
+  justify-content: space-around
+  max-width: 300px
